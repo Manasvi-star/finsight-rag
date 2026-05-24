@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+*  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #111827;
+  background: #F0F2F5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C1C7D0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8993A4;
+}
+
+/* Pulse animation for skeletons */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.skeleton-pulse {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #E5E7EB 25%, #F3F4F6 50%, #E5E7EB 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Typing dots animation */
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-8px); opacity: 1; }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #185FA5;
+  border-radius: 50%;
+  margin: 0 3px;
+  animation: typing-bounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Upload zone drag state */
+@keyframes drag-pulse {
+  0%, 100% { border-color: #85B7EB; background: #D6E8F7; }
+  50% { border-color: #185FA5; background: #C5DCF2; }
+}
+
+.upload-dragging {
+  animation: drag-pulse 1s ease-in-out infinite;
+}
+
+/* Fade in animation for messages and cards */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+/* Slide in from left */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+/* Processing spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #E0E7EF;
+  border-top-color: #185FA5;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Subtle glow for active elements */
+@keyframes subtle-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(24, 95, 165, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(24, 95, 165, 0.1); }
+}
+
+.active-glow {
+  animation: subtle-glow 2s ease-in-out infinite;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Progress bar animation */
+@keyframes bar-fill {
+  from { width: 0; }
+}
+
+.bar-animate {
+  animation: bar-fill 0.8s ease-out;
+}
+
+/* Stacked bar segment hover */
+.bar-segment {
+  transition: opacity 0.15s ease;
+}
+
+.bar-segment:hover {
+  opacity: 0.85;
+}
