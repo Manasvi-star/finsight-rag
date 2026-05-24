@@ -1,0 +1,8 @@
+# Pyrefly configuration
+# Points the type checker at the virtual environment so it can resolve
+# third-party imports (fitz/pymupdf, langchain_text_splitters, etc.)
+
+[tool.pyrefly]
+python_version = "3.13"
+venv_path = ".venv"
+search_path = ["."]
