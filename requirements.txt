@@ -17,3 +17,4 @@ python-jose[cryptography]
 bcrypt
 slowapi
 pytest
+python-multipart
